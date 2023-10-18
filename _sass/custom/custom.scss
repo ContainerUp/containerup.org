@@ -1,0 +1,69 @@
+@mixin linkIcon {
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+
+@mixin linkExternal {
+  text-decoration: underline;
+  text-decoration-color: $border-color;
+  text-underline-offset: 2px;
+
+  &:hover {
+    text-decoration-color: rgba($link-color, 0.45);
+  }
+}
+
+.main-content {
+  a {
+
+    &.external {
+      @include linkExternal;
+
+      &:after {
+        @include linkIcon;
+        background-color: $link-color;
+        --svg: url('/assets/images/external-logos/feathericons/external-link.svg');
+        -webkit-mask: var(--svg);
+        -webkit-mask-size: 16px 16px;
+        mask: var(--svg);
+        mask-size: 16px 16px;
+      }
+    }
+
+    &.github {
+      @include linkExternal;
+      &:after {
+        @include linkIcon;
+        background-image: url('/assets/images/external-logos/github-mark.svg');
+      }
+    }
+
+    &.raspberry-pi {
+      @include linkExternal;
+      &:after {
+        @include linkIcon;
+        background-image: url('/assets/images/external-logos/raspberry-pi.svg');
+      }
+    }
+  }
+}
+
+.site-nav {
+  a {
+    &.external.github {
+      &:after {
+        @include linkIcon;
+        margin-left: 2px;
+        background-image: url('/assets/images/external-logos/github-mark.svg');
+      }
+    }
+  }
+}

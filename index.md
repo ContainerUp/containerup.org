@@ -6,7 +6,7 @@ nav_order: 0
 
 # The easy way to manage containers
 
-It's easy to run containers by using [Podman](https://podman.io/){:target="_blank"}.
+It's easy to run containers by using [Podman](https://podman.io/){:target="_blank" .external}.
 With **ContainerUp**, it's even easier!
 
 Operations done **in the browser**, without ~~complex command lines~~.
@@ -16,11 +16,26 @@ Operations done **in the browser**, without ~~complex command lines~~.
 
 ## What is ContainerUp?
 
-ContainerUp is an [open source](https://github.com/ContainerUp){:target="_blank"} tool
+ContainerUp is an **open source** tool,
 which makes it simple to manage containers with Podman in the browser.
 You can complete most of the common operations with **just a few clicks**.
-It's perfect to run ContainerUp on a single-node server, like your **VPS** or your **home server**.
 
-This project is NOT intended for advanced users however,
-as it's not possible or necessary to implement all of the features that Podman supports.
-You need CLI or other tools sometimes. Check [features]({% link features.md %}) for what you can do with ContainerUp. 
+It's perfect to run ContainerUp on a single-node server,
+like your [VPS](https://en.wikipedia.org/wiki/Virtual_private_server){:target="_blank" .external},
+your **home server**, or even your [Raspberry Pi](https://www.raspberrypi.com){:target="_blank" .raspberry-pi}.
+
+Check [features]({% link features.md %}) for what you can do with ContainerUp. 
+
+## Supporting the project
+
+Any kind of your support is highly appreciated!
+
+You can:
+
+- ⭐️ Give a star
+- 📝 Make a contribution
+- 💰 [Sponsor the contributor on GitHub](https://github.com/sponsors/yylyyl){:target="_blank" .github}
+- 📢 A shout on social medias works too!
+
+[ContainerUp on GitHub](https://github.com/ContainerUp){:target="_blank" .github}
+
