@@ -10,6 +10,18 @@ nav_order: 40
 
 [Podman](https://podman.io/){:target="_blank" .external} is the only supported runtime.
 
+## What is a restart policy?
+
+Containers will be restarted when they exit, if the restart policy is set to `always`.
+
+Containers will also **be restarted after a system reboot**,
+if systemd service `podman-restart.service` is enabled on your system.
+
+This feature is available since Podman v3.3.0.
+On Debian and Ubuntu, it's available since Debian 11 bookworm, and Ubuntu 22.04 jammy.
+
+Refer to [documents of Podman](https://docs.podman.io/en/latest/markdown/podman-run.1.html#restart-policy).
+
 # Troubleshoot
 
 ## Cannot connect to WebSocket
