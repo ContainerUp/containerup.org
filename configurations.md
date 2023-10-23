@@ -8,20 +8,26 @@ nav_order: 30
 
 ## Environment variables of container
 
-### CONTAINERUP_PASSWORD_HASH
-
-**Required**
-
-`CONTAINERUP_PASSWORD_HASH` is the SHA256 hash of your username and password.
-Your can generate one with the following command:
-
-```shell
-echo -n <username>:<password> | sha256sum
-```
-
-### CONTAINERUP_PODMAN_V3
+### `CONTAINERUP_USERNAME`
 
 Optional
 
-Set `CONTAINERUP_PODMAN_V3` to 1 if you are using Podman v3.
+The username to be used on the web. Defaults to `podman`.
+
+### `CONTAINERUP_PASSWORD_HASH`
+
+Required
+ 
+It's the bcrypt hash of your desired password to use in the web.
+Your can generate one with the following command:
+
+```shell
+podman run --rm -it quay.io/containerup/containerup:latest containerup --generate-hash
+```
+
+### `CONTAINERUP_PODMAN_V3`
+
+Optional
+
+Set to 1 if you are using Podman v3.
 

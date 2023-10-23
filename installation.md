@@ -29,7 +29,7 @@ dnf install podman
 
 ContainerUp is released on [GitHub](https://github.com/ContainerUp/containerup/releases){: target="_blank" .github}.
 
-Images of ContainerUp are hosted on [Quay.io](https://quay.io/repository/containerup/containerup?tab=info).
+Images of ContainerUp are hosted on [Quay.io](https://quay.io/repository/containerup/containerup?tab=info){: target="_blank" .external}.
 
 Two methods of installation is provided here.
 
@@ -39,6 +39,25 @@ It's recommended to install ContainerUp [using a Podman container](#install-usin
 ## Install using binaries
 
 Binaries of ContainerUp can be downloaded on the release page. Choose the file according to your architecture.
+
+```
+$ ./containerup -h
+Usage of containerup:
+  -generate-hash
+        Generate a hash from your password, then exit. For security reasons, you have to input your password interactively.
+  -listen string
+        Address to listen. (default "127.0.0.1:3876")
+  -password-hash hash
+        REQUIRED. The bcrypt hash of password to be used on the web. Generate a password hash by using argument --generate-hash
+  -podman URL
+        URL of Podman. (default "unix:/run/podman/podman.sock")
+  -username string
+        The username to be used on the web. (default "podman")
+  -v3
+        Connect to Podman with a v3 legacy version.
+  -version
+        Show the version of ContainerUp, then exit.
+```
 
 ## Install using containers
 
@@ -50,7 +69,7 @@ Check [this page]({% link installation.md %}).
 
 ### Example commands
 
-Remember to **mound the socket of Podman API** into the container.
+Remember to **mount the socket of Podman API** into the container, and **set your password hash**.
 
 ```shell
 # Pull the image
@@ -60,15 +79,15 @@ podman pull quay.io/containerup/containerup:latest
 podman version
 
 # Generate your password hash
-echo -n <username>:<password> | sha256sum
+podman run --rm quay.io/containerup/containerup:latest containerup -generate-hash
 # example output:
-# bc842c31a9e54efe320d30d948be61291f3ceee4766e36ab25fa65243cd76e0e -
+# $2a$10$tRhTPH7xGTJnNUUWgH/96.klhqU2z7zEPTwqa0/KfzJa4RHrVQF0O
 
 # Run ContainerUp
 # If you're running Podman v3, add an environment variable CONTAINERUP_PODMAN_V3=1
 podman run -d --name containerup -p 3876:3876 \
   --restart always \
   -v /run/podman/podman.sock:/run/podman/podman.sock \
-  -e CONTAINERUP_PASSWORD_HASH="bc842c31a9e54efe320d30d948be61291f3ceee4766e36ab25fa65243cd76e0e" \
+  -e CONTAINERUP_PASSWORD_HASH='$2a$10$tRhTPH7xGTJnNUUWgH/96.klhqU2z7zEPTwqa0/KfzJa4RHrVQF0O' \
   quay.io/containerup/containerup:latest
 ```

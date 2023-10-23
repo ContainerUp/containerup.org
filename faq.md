@@ -10,6 +10,12 @@ nav_order: 40
 
 [Podman](https://podman.io/){:target="_blank" .external} is the only supported runtime.
 
+## What are the supported versions of Podman?
+
+ContainerUp supports Podman v3 and v4. Some features can not work perfectly with Podman v3, however.
+
+We suggest you to upgrade to Podman v4. To do that, you may need to upgrade your Linux distribution.
+
 ## What is a restart policy?
 
 Containers will be restarted when they exit, if the restart policy is set to `always`.
