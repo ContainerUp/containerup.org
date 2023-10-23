@@ -65,7 +65,7 @@ ContainerUp has been tested with root user only. **Run all the commands with roo
 
 ### Environment variables
 
-Check [this page]({% link installation.md %}).
+Check [this page]({% link configurations.md %}#environment-variables-of-container).
 
 ### Example commands
 
@@ -79,8 +79,8 @@ podman pull quay.io/containerup/containerup:latest
 podman version
 
 # Generate your password hash
-podman run --rm quay.io/containerup/containerup:latest containerup -generate-hash
-# example output:
+podman run --rm -it quay.io/containerup/containerup:latest containerup -generate-hash
+# example input 12345, output:
 # $2a$10$tRhTPH7xGTJnNUUWgH/96.klhqU2z7zEPTwqa0/KfzJa4RHrVQF0O
 
 # Run ContainerUp
@@ -88,6 +88,7 @@ podman run --rm quay.io/containerup/containerup:latest containerup -generate-has
 podman run -d --name containerup -p 3876:3876 \
   --restart always \
   -v /run/podman/podman.sock:/run/podman/podman.sock \
+  -e CONTAINERUP_USERNAME=admin \
   -e CONTAINERUP_PASSWORD_HASH='$2a$10$tRhTPH7xGTJnNUUWgH/96.klhqU2z7zEPTwqa0/KfzJa4RHrVQF0O' \
   quay.io/containerup/containerup:latest
 ```
