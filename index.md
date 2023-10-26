@@ -32,10 +32,7 @@ Any kind of your support is highly appreciated!
 
 You can:
 
-- ⭐️ Give a star
+- ⭐️ [Give a star](https://github.com/ContainerUp/containerup){:target="_blank" .github}
 - 📝 Make a contribution
 - 💰 [Sponsor the contributor on GitHub](https://github.com/sponsors/yylyyl){:target="_blank" .github}
 - 📢 A shout on social medias works too!
-
-[ContainerUp on GitHub](https://github.com/ContainerUp){:target="_blank" .github}
-
