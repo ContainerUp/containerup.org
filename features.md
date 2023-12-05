@@ -25,7 +25,7 @@ nav_order: 10
 - List containers, with automatic refreshing
 - Inspect containers
 - Create containers
-- Start/stop/remove containers
+- Start/stop/remove/rename containers
 - Commit a container to an image
 - Show logs
 - Execute commands interactively

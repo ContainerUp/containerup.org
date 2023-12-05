@@ -5,16 +5,32 @@ nav_order: 40
 ---
 
 # FAQ
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+
+---
 
 ## Does this project support any other container runtimes?
 
 [Podman](https://podman.io/){:target="_blank" .external} is the only supported runtime.
+
+---
 
 ## What are the supported versions of Podman?
 
 ContainerUp supports Podman v3 and v4. Some features can not work perfectly with Podman v3, however.
 
 We suggest you to upgrade to Podman v4. To do that, you may need to upgrade your Linux distribution.
+
+---
 
 ## What is a restart policy?
 
@@ -26,7 +42,9 @@ if systemd service `podman-restart.service` is enabled on your system.
 This feature is available since Podman v3.3.0.
 On Debian and Ubuntu, it's available since Debian 11 bookworm, and Ubuntu 22.04 jammy.
 
-Refer to [documents of Podman](https://docs.podman.io/en/latest/markdown/podman-run.1.html#restart-policy).
+Refer to [documents of Podman](https://docs.podman.io/en/latest/markdown/podman-run.1.html#restart-policy){:target="_blank" .external}.
+
+---
 
 # Troubleshoot
 
@@ -42,6 +60,8 @@ Sometimes some special configurations on the web servers may be required, howeve
 if you access ContainerUp through a reverse proxy. 
 
 [NGINX: WebSocket proxying](https://nginx.org/en/docs/http/websocket.html){:target="_blank" .external}
+
+---
 
 ## The statistics data stream is ended
 
@@ -95,4 +115,24 @@ This is the default configuration on **Raspberry Pi**.
 To fix this, add `cgroup_memory=1 cgroup_enable=memory` to `/boot/cmdline.txt` (all contents should be in one line),
 and reboot.
 
-[GitHub raspberrypi/linux#3644](https://github.com/raspberrypi/linux/issues/3644#issuecomment-698546912){:target="_blank" .external}
+Refer to [GitHub raspberrypi/linux#3644](https://github.com/raspberrypi/linux/issues/3644#issuecomment-698546912){:target="_blank" .external}.
+
+---
+
+## Updating ContainerUp
+
+v0.1.0
+{: .label .label-purple }
+
+### Why can't I update with just a click on the web page?
+
+Currently, only containerized installation can be updated with just a click on the web page.
+It's recommended to install ContainerUp [using a Podman container]({% link installation.md %}#install-using-containers).
+
+### Container named XXXX exists. Make sure these containers are removed: XXXX, XXXX, XXXX
+
+This message implies previously failed update. This may be caused by a bug.
+These containers are kept for debugging purpose.
+
+Remove the mentioned containers before you retry the update.
+

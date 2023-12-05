@@ -51,6 +51,10 @@ Usage of containerup:
         REQUIRED. The bcrypt hash of password to be used on the web. Generate a password hash by using argument --generate-hash
   -podman URL
         URL of Podman. (default "unix:/run/podman/podman.sock")
+  -tls-cert string
+        Path of TLS certificate
+  -tls-key string
+        Path of TLS key
   -username string
         The username to be used on the web. (default "podman")
   -v3
