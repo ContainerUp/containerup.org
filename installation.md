@@ -52,7 +52,7 @@ Usage of containerup:
   -podman URL
         URL of Podman. (default "unix:/run/podman/podman.sock")
   -tls-cert string
-        Path of TLS certificate
+        Path of TLS certificate. When specified, the listening port will serve TLS instead of plaintext.
   -tls-key string
         Path of TLS key
   -username string

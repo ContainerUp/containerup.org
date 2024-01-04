@@ -59,6 +59,10 @@ v0.1.0
 
 Location of TLS certificate file. Must be used together with `CONTAINERUP_TLS_KEY`.
 
+When specified, the listening port 3876 will serve TLS instead of plaintext.
+
+{: .info }
+
 Certificate and key files must be mounted into the container.
 
 ---
